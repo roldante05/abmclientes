@@ -109,48 +109,48 @@ if ($_POST) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
-    <title>Document</title>
+    <title>Registro de clientes</title>
 </head>
 
 <body>
-    <main class="container">
+    <main class="container mt-4 bg-secondary rounded-3 text-white fw-bolder">
         <div class="row">
             <div class="my-3 col-sm-11 text-center">
                 <h1>Regitro de clientes</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-5">
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="pb-3">
                         <label for="txtDni">DNI:*</label>
-                        <input type="text" for="txtDni" name="txtDni" class="form-control" value="<?php echo isset($aClientes[$id]) ? $aClientes[$id]["dni"] : ""; ?>">
+                        <input type="text" for="txtDni" name="txtDni" class="form-control shadow" value="<?php echo isset($aClientes[$id]) ? $aClientes[$id]["dni"] : ""; ?>">
                     </div>
                     <div class="pb-3">
                         <label for="txtNombre">Nombre:*</label>
-                        <input type="text" for="txtNombre" name="txtNombre" class="form-control" value="<?php echo isset($aClientes[$id]) ? $aClientes[$id]["nombre"] : ""; ?>">
+                        <input type="text" for="txtNombre" name="txtNombre" class="form-control shadow" value="<?php echo isset($aClientes[$id]) ? $aClientes[$id]["nombre"] : ""; ?>">
                     </div>
                     <div class="pb-3">
                         <label for="txtTelefono">Telefono:*</label>
-                        <input type="tel" for="txtTelefono" name="txtTelefono" class="form-control" value="<?php echo isset($aClientes[$id]) ? $aClientes[$id]["telefono"] : ""; ?>">
+                        <input type="tel" for="txtTelefono" name="txtTelefono" class="form-control shadow" value="<?php echo isset($aClientes[$id]) ? $aClientes[$id]["telefono"] : ""; ?>">
                     </div>
                     <div class="pb-3">
                         <label for="txtCorreo">Correo:*</label>
-                        <input type="text" for="txtCorreo" name="txtCorreo" class="form-control" value="<?php echo isset($aClientes[$id]) ? $aClientes[$id]["correo"] : ""; ?>">
+                        <input type="text" for="txtCorreo" name="txtCorreo" class="form-control shadow" value="<?php echo isset($aClientes[$id]) ? $aClientes[$id]["correo"] : ""; ?>">
                     </div>
                     <div class="pb-3">
                         <label for="txtArchivo">Archivo adjunto:*</label>
-                        <input type="file" for="txtArchivo" name="archivo" class="form-control">
+                        <input type="file" for="txtArchivo" name="archivo" class="form-control shadow">
                         <label for="txtArchivo">Archivos admitidos: .jpg, .jpeg, .png</label>
                     </div>
-                    <div class="pb-3">
-                        <button type="submit" class=" btn btn-primary ">Guardar</button>
-                        <a href="index.php" class=" btn btn-danger ">NUEVO</a>
+                    <div class="pb-3 ">
+                        <button type="submit" class=" btn btn-primary fw-bold">Guardar</button>
+                        <a href="index.php" class=" btn btn-danger fw-bold">NUEVO</a>
                     </div>
                 </form>
             </div>
             <div class="col-sm-6">
-                <table class="table table-hover border">
+                <table class="table table-hover border shadow bg-light">
                     <tr>
                         <th>Imagen</th>
                         <th>DNI</th>
