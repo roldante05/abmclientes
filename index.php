@@ -34,7 +34,10 @@ if (isset($_GET["do"]) && $_GET["do"] == "eliminar") {
     //Almacena el json en el archivo.txt
     file_put_contents("archivo.txt", $strJson);
     //Redirecciona ala misma pagina
-    header("Location: index.php");
+    // header("Location: index.php");
+    $msg="<strong>Se ha eliminado correctamente</strong>. Presiona en 'NUEVO' para cargar un cliente nuevo";
+    $alert= "danger";
+    $disabled="disabled";
 }
 
 
@@ -77,6 +80,8 @@ if ($_POST) {
             "correo" => $correo,
             "imagen" => $nombreImagen
         );
+        $msg="Se ha actualizado correctamente";
+        $alert= "success";
     } else {
         //Se inserta una nueva tarea
         $aClientes[] = array(
@@ -86,6 +91,8 @@ if ($_POST) {
             "correo" => $correo,
             "imagen" => $nombreImagen
         );
+        $msg="Se ha guardado correctamente";
+        $alert= "success";
     }
 
 
@@ -119,6 +126,10 @@ if ($_POST) {
                 <h1>Regitro de clientes</h1>
             </div>
         </div>
+        <?php if(isset($msg)){
+            echo "<div class=\"alert alert-" . $alert . " role=\"alert\">" . $msg . "</div>";
+        }
+        ?>
         <div class="row">
             <div class="col-sm-5">
                 <form action="" method="POST" enctype="multipart/form-data">
